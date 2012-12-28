@@ -9,7 +9,9 @@ A magento extension for getting the current price of Bitcoins every five minutes
 
 Once initiated, grab the price from anywhere in your codebase using something similar to 
 
-`$current_BTC_price = Mage::getStoreConfig('Bitcoinstore/BTCTicker/current_BTC_price');`
+```php
+$current_BTC_price = Mage::getStoreConfig('Bitcoinstore/BTCTicker/current_BTC_price');
+```
 
 
 Update instantly by opening http://yoursite.com/cron.php in your browser
