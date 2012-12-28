@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <modules>
+    <Bitcoinstore_BTCTicker>
+      <version>0.0.6</version>
+    </Bitcoinstore_BTCTicker>
+  </modules>
+  <global>
+    <helpers>
+      <btcticker>
+        <class>Bitcoinstore_BTCTicker_Helper</class>
+      </btcticker>
+    </helpers>
+    <models>
+      <btcticker>
+        <class>Bitcoinstore_BTCTicker_Model</class>
+      </btcticker>
+    </models>
+  </global>
+  <default>
+    <btcticker>
+      <main>
+        <update_frequency_minutes>5</update_frequency_minutes>
+        <current_btc_price></current_btc_price>
+      </main>
+    </btcticker>
+  </default>
+  <crontab>
+    <jobs>
+      <btcticker>
+        <schedule><cron_expr>*/5 * * * *</cron_expr></schedule>
+        <run><model>btcticker/update::getMtGoxAverage</model></run>
+      </btcticker>
+    </jobs>
+  </crontab>
+</config>
