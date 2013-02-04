@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <modules>
+    <Bitcoinstore_BTCTicker>
+      <version>1.0.7</version>
+    </Bitcoinstore_BTCTicker>
+  </modules>
+  <global>
+    <helpers>
+      <btcticker>
+        <class>Bitcoinstore_BTCTicker_Helper</class>
+      </btcticker>
+    </helpers>
+    <models>
+      <btcticker>
+        <class>Bitcoinstore_BTCTicker_Model</class>
+      </btcticker>
+    </models>
+  </global>
+  <default>
+    <btcticker>
+      <main>
+        <current_bitpay_price></current_bitpay_price>
+        <current_mtgox_price></current_mtgox_price>
+      </main>
+    </btcticker>
+  </default>
+  <crontab>
+    <jobs>
+      <btcticker_update_mtgox>
+        <schedule><cron_expr>*/1 * * * *</cron_expr></schedule>
+        <run><model>btcticker/update::getMtGoxAverage</model></run>
+      </btcticker_update_mtgox>
+      <btcticker_update_bitpay>
+        <schedule><cron_expr>*/1 * * * *</cron_expr></schedule>
+        <run><model>btcticker/update::getBitPayAverage</model></run>
+      </btcticker_update_bitpay>
+    </jobs>
+  </crontab>
+</config>

@@ -1,0 +1,39 @@
+<config>
+    <tabs>
+        <bitcoinstore translate="label" module="btcticker">
+            <label>BTC Ticker</label>
+            <sort_order>100</sort_order>
+        </bitcoinstore>
+    </tabs> 
+    <sections>
+        <btcticker translate="label" module="btcticker">
+            <label>Main Options</label>
+            <tab>bitcoinstore</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1000</sort_order>
+            <show_in_default>0</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+              <main translate="label" module="btcticker">
+                <label>Bitcoinstore's Global BTCTicker Options</label>
+                <frontend_type>text</frontend_type>
+                <sort_order>10</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>1</show_in_website>
+                <show_in_store>1</show_in_store>
+                <fields>
+                  <current_btc_price translate="label">
+                    <label>BTC Price</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>70</sort_order>
+                    <show_in_default>0</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                  </current_btc_price>
+                </fields>
+              </main>
+            </groups>
+        </btcticker>
+    </sections>
+</config>
